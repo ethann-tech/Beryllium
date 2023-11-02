@@ -16,7 +16,7 @@ import zlc.season.butterfly.annotation.Agile
 @Agile(scheme = RouterPath.MAIN_ACTIVITY_HOME)
 class ActivityMain : ActivityViewBindingBase<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
-    private val mFragments = arrayListOf(FragmentHome(), FragmentCategory(), FragmentSystem(), FragmentMine())
+    private val mFragments = arrayListOf(FragmentHome.newInstance(), FragmentCategory(), FragmentSystem(), FragmentMine())
     private val mAdapter: AdapterNavMain by lazy { AdapterNavMain(mFragments = mFragments, fm = supportFragmentManager, lifecycle = lifecycle) }
     override fun initWindowAttributes() {
     }
