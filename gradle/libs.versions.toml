@@ -130,7 +130,9 @@ base-popup = 'io.github.razerdp:BasePopup:3.2.1'
 toaster = 'com.github.getActivity:Toaster:12.3'
 dsltablayout = 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
 dsltablayout-delegateforviewpage2 = 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
-
+refresh-kernel='com.scwang.smart:refresh-layout-kernel:2.0.3'
+refresh-header-classics='com.scwang.smart:refresh-header-classics:2.0.3'
+refresh-footer-classics='com.scwang.smart:refresh-footer-classics:2.0.3'
 leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
 
 

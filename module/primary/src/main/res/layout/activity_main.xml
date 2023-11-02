@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="?attr/actionBarSize">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight="1" />
+
+
+    <com.angcyo.tablayout.DslTabLayout
+        android:id="@+id/nav_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_48"
+        app:tab_default_index="0"
+        app:tab_deselect_color="@color/color_4f5356"
+        app:tab_item_is_equ_width="true"
+        app:tab_select_color="@color/color_0165b8">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_home"
+            style="@style/NavTabItemStyle"
+            android:drawableTop="@mipmap/ic_navi_home_select"
+            android:text="@string/tab_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_category"
+            style="@style/NavTabItemStyle"
+            android:drawableTop="@mipmap/ic_navi_categories_select"
+            android:text="@string/tab_categories" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_system"
+            style="@style/NavTabItemStyle"
+            android:drawableTop="@mipmap/ic_navi_find_select"
+            android:text="@string/tab_system" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_mine"
+            style="@style/NavTabItemStyle"
+            android:drawableTop="@mipmap/ic_navi_mine_select"
+            android:text="@string/tab_mine" />
+
+
+    </com.angcyo.tablayout.DslTabLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
