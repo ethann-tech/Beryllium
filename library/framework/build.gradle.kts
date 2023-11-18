@@ -60,6 +60,7 @@ dependencies {
     kapt(libs.google.hilt.android.compiler)
     implementation(libs.slf4j.api)
     implementation(libs.logback.android)
-    implementation(libs.kotlin.android.ext)
+    implementation(libs.ethan.kotlin.android.ext)
+    implementation(libs.ethan.zincum)
     implementation(libs.toaster)
 }

@@ -2,21 +2,17 @@ package com.ethan.main.ui.fragment
 
 import android.os.Bundle
 import android.view.View
-import com.ethan.common.BeanBanner
-import com.ethan.framework.base.FragmentBase
+import com.ethan.framework.base.FragmentBusinessBase
 import com.ethan.main.R
 import com.ethan.main.databinding.FragmentHomeBinding
 import com.ethan.main.ui.adapter.AdapterHomeBanner
 import com.ethan.main.ui.viewmodel.ViewModelHome
-import com.google.gson.Gson
 import com.hjq.toast.Toaster
 import com.youth.banner.indicator.CircleIndicator
-import com.youth.banner.listener.OnBannerListener
-import kotlinx.coroutines.flow.Flow
 
-class FragmentHome private constructor() : FragmentBase() {
+class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBinding>() {
 
-    private lateinit var mBinding: FragmentHomeBinding
+
     private val mAdapterBanner:AdapterHomeBanner by lazy {
         AdapterHomeBanner(mutableListOf())
     }
@@ -31,7 +27,6 @@ class FragmentHome private constructor() : FragmentBase() {
     }
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
-        mBinding = FragmentHomeBinding.bind(view)
         mBinding.banner.addBannerLifecycleObserver(viewLifecycleOwner)
             .setAdapter(mAdapterBanner)
             .indicator = CircleIndicator(context)

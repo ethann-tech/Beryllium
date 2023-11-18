@@ -2,15 +2,15 @@ package com.ethan.main.ui.fragment
 
 import android.os.Bundle
 import android.view.View
-import com.ethan.framework.base.FragmentViewBindingBase
+import com.ethan.framework.base.FragmentBusinessBase
+import com.ethan.main.R
 import com.ethan.main.databinding.FragmentMineBinding
-import com.ethan.main.databinding.FragmentSystemBinding
 
 /**
  * fragment 体系
  */
-class FragmentMine : FragmentViewBindingBase<FragmentMineBinding>(FragmentMineBinding::inflate) {
-
+class FragmentMine : FragmentBusinessBase<FragmentMineBinding>() {
+    override fun getLayoutResId(): Int= R.layout.fragment_mine
     override fun initData() {
         super.initData()
 

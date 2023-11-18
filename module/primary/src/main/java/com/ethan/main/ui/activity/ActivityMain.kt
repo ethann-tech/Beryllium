@@ -2,8 +2,7 @@ package com.ethan.main.ui.activity
 
 import com.angcyo.tablayout.delegate2.ViewPager2Delegate
 import com.ethan.common.constant.RouterPath
-import com.ethan.framework.base.ActivityDataBindingBase
-import com.ethan.framework.base.ActivityViewBindingBase
+import com.ethan.framework.base.ActivityBusinessBase
 import com.ethan.main.R
 import com.ethan.main.databinding.ActivityMainBinding
 import com.ethan.main.ui.adapter.AdapterNavMain
@@ -16,7 +15,7 @@ import zlc.season.butterfly.annotation.Agile
 
 @AndroidEntryPoint
 @Agile(scheme = RouterPath.MAIN_ACTIVITY_HOME)
-class ActivityMain : ActivityDataBindingBase<ActivityMainBinding>() {
+class ActivityMain : ActivityBusinessBase<ActivityMainBinding>() {
 
     private val mFragments = arrayListOf(FragmentHome.newInstance(), FragmentCategory(), FragmentSystem(), FragmentMine())
     private val mAdapter: AdapterNavMain by lazy { AdapterNavMain(mFragments = mFragments, fm = supportFragmentManager, lifecycle = lifecycle) }

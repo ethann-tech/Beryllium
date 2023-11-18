@@ -79,7 +79,7 @@ dependencies {
     implementation(libs.banner2)
     implementation(libs.slf4j.api)
     implementation(libs.logback.android)
-    implementation(libs.kotlin.android.ext) // 好用的三方库
+    implementation(libs.ethan.kotlin.android.ext) // 好用的三方库
     implementation(libs.toaster)
     implementation(libs.butterfly)
     implementation(libs.butterfly.compose)
@@ -87,6 +87,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.glide)
     implementation(libs.koin.android)
+    implementation(libs.ethan.zincum)
     compileOnly(project(":library:framework"))
     compileOnly(project(":library:common"))
     compileOnly(project(":library:network"))

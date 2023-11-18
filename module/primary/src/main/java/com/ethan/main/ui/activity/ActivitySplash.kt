@@ -2,8 +2,7 @@ package com.ethan.main.ui.activity
 
 import androidx.lifecycle.lifecycleScope
 import com.ethan.common.constant.RouterPath
-import com.ethan.framework.base.ActivityDataBindingBase
-import com.ethan.framework.base.ActivityViewBindingBase
+import com.ethan.framework.base.ActivityBusinessBase
 import com.ethan.framework.ext.countDownCoroutines
 import com.ethan.main.R
 import com.ethan.main.databinding.ActivitySplashBinding
@@ -13,7 +12,7 @@ import zlc.season.butterfly.annotation.Agile
 
 @AndroidEntryPoint
 @Agile(scheme = RouterPath.ACTIVITY_SPLASH)
-class ActivitySplash : ActivityDataBindingBase<ActivitySplashBinding>() {
+class ActivitySplash : ActivityBusinessBase<ActivitySplashBinding>() {
 
     override fun layoutResId(): Int = R.layout.activity_splash
     override fun initWindowAttributes() {}

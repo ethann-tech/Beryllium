@@ -146,7 +146,8 @@ tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
 
 wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
 
-kotlin-android-ext = 'com.github.ethaannn:kotlin-android-ext:1.1.2'
+ethan-kotlin-android-ext = 'com.github.ethaannn:kotlin-android-ext:1.1.2'
+ethan-zincum='com.github.ethann-tech:Zincum:0.0.4'
 
 # other
 androidwheelview = 'com.github.weidongjian:androidWheelView:1.0.0'

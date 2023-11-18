@@ -19,5 +19,5 @@ import androidx.annotation.Keep
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-@Keep
+
 class ViewHolderBase<B : ViewBinding>(binding: B) : RecyclerView.ViewHolder(binding.root)
