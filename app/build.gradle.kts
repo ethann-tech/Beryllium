@@ -103,6 +103,7 @@ dependencies {
     kapt(libs.butterfly.compiler)
     implementation(project(":library:common"))
     implementation(project(":library:framework"))
+    implementation(project(":library:network"))
     implementation(project(":module:primary"))
 
 

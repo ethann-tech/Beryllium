@@ -9,15 +9,20 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.runBlocking
+import kotlin.properties.Delegates
 
- abstract class ApplicationLifecycle : Application(), LifecycleOwner {
+abstract class ApplicationLifecycle : Application(), LifecycleOwner {
 
     private val mRegistry: LifecycleRegistry by lazy { LifecycleRegistry(this) }
     private val mHandle: Handler = Handler(Looper.myLooper()!!)
     private var mLastDispatchRunnable: DispatchRunnable? = null
 
+     companion object{
+         private lateinit var mInstance :Application
+         fun instance() = mInstance
+     }
     open suspend fun onCreatedBySuspend() {
-
+        mInstance =this
     }
 
     override val lifecycle: Lifecycle

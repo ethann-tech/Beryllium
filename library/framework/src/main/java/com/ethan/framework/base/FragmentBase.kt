@@ -10,7 +10,7 @@ import com.ethan.framework.util.LoadingUtil
 abstract class FragmentBase : Fragment() {
 
     private val mLoadingUtil by lazy { LoadingUtil(requireContext()) }
-    private val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
+    protected val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
 
 
     protected var mIsViewCreate = false
@@ -27,7 +27,7 @@ abstract class FragmentBase : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView(view = view, savedInstanceState = savedInstanceState)
-
+        initData()
     }
 
     private fun getContainerView(inflater: LayoutInflater, container: ViewGroup?): View? {

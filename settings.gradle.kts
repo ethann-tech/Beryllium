@@ -20,5 +20,7 @@ dependencyResolutionManagement {
 rootProject.name = "Beryllium"
 include(":app")
 include(":library:framework")
-include(":module:primary")
 include(":library:common")
+include(":library:network")
+
+include(":module:primary")
