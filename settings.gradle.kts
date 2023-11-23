@@ -23,4 +23,5 @@ include(":library:framework")
 include(":library:common")
 include(":library:network")
 
-include(":module:primary")
+include(":module:main")
+include(":module:verify")

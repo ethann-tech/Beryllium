@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.ethan.framework.util.LoadingUtil
 import com.ethan.zincum.base.FragmentDataBindingBase
+import org.koin.core.component.KoinComponent
 
-abstract class FragmentBusinessBase<DB : ViewDataBinding> : FragmentDataBindingBase<DB>() {
+abstract class FragmentBusinessBase<DB : ViewDataBinding> : FragmentDataBindingBase<DB>(),KoinComponent {
     private lateinit var mLoadingUtil: LoadingUtil
     protected val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
     override fun initView(view: View, savedInstanceState: Bundle?) {

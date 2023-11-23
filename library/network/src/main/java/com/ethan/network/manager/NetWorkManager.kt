@@ -2,7 +2,6 @@ package com.ethan.network.manager
 
 import com.ethan.framework.ApplicationLifecycle
 import com.ethan.network.HttpConstants
-import com.ethan.network.api.ApiInterface
 import com.ethan.network.interceptor.HttpLoggerInterceptor
 import com.ethan.network.ssl.TrustAllCerts
 import okhttp3.Cache
@@ -16,12 +15,11 @@ import java.security.SecureRandom
 import java.util.concurrent.TimeUnit
 import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLSocketFactory
-import kotlin.math.max
 
 class NetWorkManager private constructor() {
     private lateinit var retrofit: Retrofit
-    private val  trustAllCerts: TrustAllCerts = TrustAllCerts()
-    private val  sslSocketFactory =provideSSLSocketFactory()
+    private val trustAllCerts: TrustAllCerts = TrustAllCerts()
+    private val sslSocketFactory = provideSSLSocketFactory()
     private val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
 
     init {
@@ -35,28 +33,16 @@ class NetWorkManager private constructor() {
     private object Holder {
         val holder = NetWorkManager()
     }
+
     fun <T> provideService(cls: Class<T>): T = retrofit.create(cls)
 
 
-
-    private fun provideRetrofit(): Retrofit = Retrofit.Builder()
-        .baseUrl(HttpConstants.BASE_URL)
-        .client(provideOkHttpClient())
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-        .build()
+    private fun provideRetrofit(): Retrofit = Retrofit.Builder().baseUrl(HttpConstants.BASE_URL).client(provideOkHttpClient()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava3CallAdapterFactory.create()).build()
 
 
-    private fun provideOkHttpClient( ): OkHttpClient = OkHttpClient()
-        .newBuilder()
-        .connectTimeout(timeout = 30L, TimeUnit.SECONDS)
-        .readTimeout(timeout = 30L, TimeUnit.SECONDS)
-        .cache(Cache(directory = ApplicationLifecycle.instance().cacheDir, maxSize = 100*1024*102))
-        .retryOnConnectionFailure(retryOnConnectionFailure = true)
-        .addInterceptor(HttpLoggingInterceptor(logger = HttpLoggerInterceptor())
-        .setLevel(HttpLoggingInterceptor.Level.BASIC))
-        .sslSocketFactory(sslSocketFactory, trustAllCerts)
-        .hostnameVerifier(hostnameVerifier = { _, _ -> true }).build()
+    private fun provideOkHttpClient(): OkHttpClient = OkHttpClient().newBuilder().connectTimeout(timeout = 30L, TimeUnit.SECONDS).readTimeout(timeout = 30L, TimeUnit.SECONDS).cache(Cache(directory = ApplicationLifecycle.instance().cacheDir, maxSize = 100 * 1024 * 102)).retryOnConnectionFailure(retryOnConnectionFailure = true).addInterceptor(
+            HttpLoggingInterceptor(logger = HttpLoggerInterceptor()).setLevel(HttpLoggingInterceptor.Level.BASIC)
+        ).sslSocketFactory(sslSocketFactory, trustAllCerts).hostnameVerifier(hostnameVerifier = { _, _ -> true }).build()
 
 
     fun provideSSLSocketFactory(): SSLSocketFactory {

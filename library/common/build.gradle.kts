@@ -64,8 +64,8 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.slf4j.api)
     implementation(libs.logback.android)
+    implementation(libs.koin.android)
     implementation(libs.ethan.kotlin.android.ext)
     implementation(libs.toaster)
-    implementation(libs.koin.android)
     implementation(libs.ethan.zincum)
 }

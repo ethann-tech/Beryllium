@@ -1,6 +1,6 @@
 package com.ethan.network.api
 
-import com.ethan.common.BeanBanner
+import com.ethan.common.bean.BeanBanner
 import com.ethan.network.response.ResponseBase
 import retrofit2.http.GET
 import retrofit2.http.Path

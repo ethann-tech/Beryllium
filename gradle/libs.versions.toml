@@ -9,6 +9,7 @@ packageName = "com.ethan.beryllium"
 kotlinCompilerVersion = "1.5.0" #compose
 agp = "8.1.2"
 org-jetbrains-kotlin-android = "1.9.0"
+#org-jetbrains-kotlin-kapt = "1.9.20"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -18,7 +19,10 @@ material = "1.9.0"
 legacy-support-v4 = "1.0.0"
 lifecycle-livedata-ktx = "2.6.1"
 lifecycle-viewmodel-ktx = "2.6.1"
-koin-android="3.3.1"
+zxing_version = "3.3.3"
+koin_version = "3.5.0"
+
+view-shape-version="1.7.6"
 [libraries]
 #
 # androidx & kotlin
@@ -28,7 +32,7 @@ androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
 androidx-material = 'com.google.android.material:material:1.10.0'
 androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
 androidx-multidex = 'androidx.multidex:multidex:2.0.1'
-androidx-viewpage2='androidx.viewpager2:viewpager2:1.0.0'
+androidx-viewpage2 = 'androidx.viewpager2:viewpager2:1.0.0'
 androidx-lifecycle-livedata = 'androidx.lifecycle:lifecycle-livedata:2.6.2'
 androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
 androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
@@ -39,7 +43,7 @@ androidx-lifecycle-extensions = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.7.5'
 androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.7.5'
 androidx-splashscreen = 'androidx.core:core-splashscreen:1.0.1'
-androidx-guava='com.google.guava:guava:30.1.1-android'
+androidx-guava = 'com.google.guava:guava:30.1.1-jre'
 
 androidx-room-compiler = 'androidx.room:room-compiler:2.6.0' # kapt
 androidx-room-ktx = 'androidx.room:room-ktx:2.6.0'
@@ -50,15 +54,23 @@ androidx-room-testing = 'androidx.room:room-testing:2.6.0'
 
 kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
+# https://insert-koin.io/docs/setup/koin
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin_version" }
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin_version" }
+koin-logger-slf4j = { group = "io.insert-koin", name = "koin-logger-slf4j", version.ref = "koin_version" }
+koin-android-compat = { group = "io.insert-koin", name = "koin-android-compat", version.ref = "koin_version" }
+koin-androidx-navigation = { group = "io.insert-koin", name = "koin-androidx-navigation", version.ref = "koin_version" }
+koin-androidx-workmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager", version.ref = "koin_version" }
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin_version" }
 # test
 test-junit = 'junit:junit:4.13.2'
 test-android-ext = 'androidx.test.ext:junit:1.1.5'
 test-android-espresso = 'androidx.test.espresso:espresso-core:3.5.1'
-
+leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
 
 androidx-activity-compose = 'androidx.activity:activity-compose:1.8.0'
 androidx-compose-ui = 'androidx.compose.ui:ui:1.5.4'
-androidx-compose-runtime ='androidx.compose.runtime:runtime:1.6.0-alpha08'
+androidx-compose-runtime = 'androidx.compose.runtime:runtime:1.6.0-alpha08'
 androidx-compose-ui-graphics = 'androidx.compose.ui:ui-graphics:1.5.4'
 androidx-compose-ui-tooling-preview = 'androidx.compose.ui:ui-tooling-preview:1.5.4'
 androidx-compose-material3 = 'androidx.compose.material3:material3:1.1.2'
@@ -74,19 +86,19 @@ jetbrains-annotations = 'org.jetbrains:annotations:24.0.1'
 
 # 必备
 okhttp3-okhttp = 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
-okhttp3-logging-interceptor= 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
-retrofit-core ='com.squareup.retrofit2:retrofit:2.9.0'
-retrofit-adapter-rxjava3= 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-retrofit-converter-gson ='com.squareup.retrofit2:converter-gson:2.9.0'
-retrofit-converter-scalars= 'com.squareup.retrofit2:converter-scalars:2.9.0'
+okhttp3-logging-interceptor = 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+retrofit-core = 'com.squareup.retrofit2:retrofit:2.9.0'
+retrofit-adapter-rxjava3 = 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+retrofit-converter-gson = 'com.squareup.retrofit2:converter-gson:2.9.0'
+retrofit-converter-scalars = 'com.squareup.retrofit2:converter-scalars:2.9.0'
 
 
 
 rxkotlin = 'io.reactivex.rxjava3:rxkotlin:3.0.1'
-rxlifecycle-lifecycle-kotlin='com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
-rxbinding="com.jakewharton.rxbinding4:rxbinding:4.0.0"
-rxbinding-core="com.jakewharton.rxbinding4:rxbinding-core:4.0.0"
-rxbinding-appcompat ="com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0"
+rxlifecycle-lifecycle-kotlin = 'com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
+rxbinding = "com.jakewharton.rxbinding4:rxbinding:4.0.0"
+rxbinding-core = "com.jakewharton.rxbinding4:rxbinding-core:4.0.0"
+rxbinding-appcompat = "com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0"
 rxjava3-rxandroid = 'io.reactivex.rxjava3:rxandroid:3.0.2'
 rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.5'
 # viewbinding
@@ -97,8 +109,8 @@ fastjson = 'com.alibaba:fastjson:1.2.83'
 gson = 'com.google.code.gson:gson:2.10.1'
 
 # sqlite 加密驱动
-android-database-sqlcipher= 'net.zetetic:android-database-sqlcipher:4.4.3'
-android-oaid='com.github.gzu-liyujiang:Android_CN_OAID:4.2.3'
+android-database-sqlcipher = 'net.zetetic:android-database-sqlcipher:4.4.3'
+android-oaid = 'com.github.gzu-liyujiang:Android_CN_OAID:4.2.3'
 # 图片处理
 glide = 'com.github.bumptech.glide:glide:4.15.0'
 imagepicker = 'com.lcw.library:imagepicker:2.2.7'
@@ -125,9 +137,6 @@ baserecyclerviewadapterhelper = 'io.github.cymchad:BaseRecyclerViewAdapterHelper
 recyclerview-flexibledivider = 'com.yqritc:recyclerview-flexibledivider:1.4.0'
 xrecyclerview = 'com.jcodecraeer:xrecyclerview:1.6.0'
 
-
-
-
 ############################################################################################
 # https://github.com/ssseasonnn/Butterfly/blob/master/README.zh.md
 butterfly = 'com.github.ssseasonnn.Butterfly:butterfly:1.2.5'
@@ -146,8 +155,8 @@ tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
 
 wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
 
-ethan-kotlin-android-ext = 'com.github.ethaannn:kotlin-android-ext:1.1.2'
-ethan-zincum='com.github.ethann-tech:Zincum:0.0.4'
+ethan-kotlin-android-ext ='com.github.ethann-tech:kotlin-android-extension:1.0.3'
+ethan-zincum = 'com.github.ethann-tech:Zincum:0.0.5'
 
 # other
 androidwheelview = 'com.github.weidongjian:androidWheelView:1.0.0'
@@ -164,31 +173,29 @@ umsdk-abtest = 'com.umeng.umsdk:abtest:1.0.0'
 base-popup = 'io.github.razerdp:BasePopup:3.2.1'
 toaster = 'com.github.getActivity:Toaster:12.3'
 # https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
-flycotablayout='io.github.h07000223:flycoTabLayout:3.0.0'
+flycotablayout = 'io.github.h07000223:flycoTabLayout:3.0.0'
 dsltablayout = 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
 dsltablayout-delegateforviewpage2 = 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
 # 下拉刷新
-refresh-kernel='com.scwang.smart:refresh-layout-kernel:2.0.3'
-refresh-header-classics='com.scwang.smart:refresh-header-classics:2.0.3'
-refresh-footer-classics='com.scwang.smart:refresh-footer-classics:2.0.3'
+refresh-kernel = 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+refresh-header-classics = 'com.scwang.smart:refresh-header-classics:2.0.3'
+refresh-footer-classics = 'com.scwang.smart:refresh-footer-classics:2.0.3'
 
-xbanner='com.github.xiaohaibin:XBanner:androidx_v1.2.6'
-banner2='io.github.youth5201314:banner:2.2.2'
-mmkv='com.tencent:mmkv-static:1.2.10'
-leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
+xbanner = 'com.github.xiaohaibin:XBanner:androidx_v1.2.6'
+banner2 = 'io.github.youth5201314:banner:2.2.2'
+mmkv = 'com.tencent:mmkv-static:1.2.10'
+
 platform-androidx-compose-bom = "androidx.compose:compose-bom:2023.10.01"
 
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacy-support-v4" }
 
-koin-android ={ group ="io.insert-koin",name ="koin-android",version.ref="koin-android"}
+zxing-core = { group = "com.google.zxing", name = "core", version.ref = "zxing_version" }
 
 
-
-
+view-shape= {group ="com.github.JavaNoober.BackgroundLibrary" ,name="libraryx",version.ref ="view-shape-version"}
 
 
 
 [plugins]
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
-

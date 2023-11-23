@@ -3,13 +3,18 @@ package com.ethan.beryllium
 import android.content.Context
 import android.view.Gravity
 import androidx.multidex.MultiDex
+import com.ethan.beryllium.koin.allModule
 import com.ethan.framework.ApplicationLifecycle
 import com.ethan.framework.log.ImplLoggerManager
 import com.hjq.toast.ToastStrategy
 import com.hjq.toast.Toaster
 import dagger.hilt.android.HiltAndroidApp
 import io.github.uhsk.kit.format
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 import java.util.Date
+import java.util.logging.Level
 import kotlin.coroutines.coroutineContext
 
 /**
@@ -28,8 +33,7 @@ class ApplicationBeryllium : ApplicationLifecycle() {
         super.onCreatedBySuspend()
         initLogger()
         initToaster()
-
-
+        initKoin()
     }
 
     private suspend fun initLogger() {
@@ -51,5 +55,13 @@ class ApplicationBeryllium : ApplicationLifecycle() {
         Toaster.setGravity(Gravity.TOP)
         Toaster.setStrategy(ToastStrategy(ToastStrategy.SHOW_STRATEGY_TYPE_QUEUE))
 
+    }
+
+    private fun initKoin() {
+        startKoin {
+            androidLogger(org.koin.core.logger.Level.INFO)
+            androidContext(this@ApplicationBeryllium)
+            modules(allModule)
+        }
     }
 }

@@ -59,7 +59,7 @@ dependencies {
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
 
-    implementation(libs.gson)
+
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel)
@@ -74,13 +74,21 @@ dependencies {
     implementation(libs.logback.android)
     implementation(libs.slf4j.api)
     implementation(libs.mmkv)
-
+    implementation(libs.gson)
+    implementation(libs.koin.androidx.workmanager)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.android)
+    implementation(libs.koin.ktor)
+    implementation(libs.koin.logger.slf4j)
+    implementation(libs.ethan.kotlin.android.ext)
+    implementation(libs.ethan.zincum)
     androidTestImplementation(platform(libs.platform.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)

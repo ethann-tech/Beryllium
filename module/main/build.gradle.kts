@@ -1,39 +1,21 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id("io.github.ssseasonnn.butterfly")
 }
 
 android {
-    namespace = "com.ethan.beryllium"
-    compileSdk = libs.versions.compileSdk.get()
-        .toInt()
+    namespace = "com.ethan.main"
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.ethan.beryllium"
-        minSdk = libs.versions.minSdk.get()
-            .toInt()
-        targetSdk = libs.versions.targetSdk.get()
-            .toInt()
-        versionCode = libs.versions.versionCode.get()
-            .toInt()
-        versionName = libs.versions.versionName.get()
-
+        minSdk = libs.versions.minSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        debug {
-
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -43,21 +25,16 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerVersion.get()
     }
     buildFeatures {
         compose = true
         viewBinding = true
         dataBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerVersion.get()
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
@@ -67,8 +44,10 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)
+    implementation(libs.androidx.guava)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -84,7 +63,6 @@ dependencies {
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
-    androidTestImplementation(platform(libs.platform.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.ui.graphics)
@@ -94,21 +72,26 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation(libs.dsltablayout)
-    implementation(libs.koin.android)
+    implementation(libs.dsltablayout.delegateforviewpage2)
+    implementation(libs.refresh.kernel)
+    implementation(libs.refresh.header.classics)
+    implementation(libs.refresh.footer.classics)
+    implementation(libs.xbanner)
+    implementation(libs.banner2)
     implementation(libs.slf4j.api)
-    implementation(libs.view.shape)
     implementation(libs.logback.android)
-    implementation(libs.ethan.kotlin.android.ext) // 好用的三方库
-    implementation(libs.ethan.zincum)
     implementation(libs.toaster)
     implementation(libs.butterfly)
     implementation(libs.butterfly.compose)
     kapt(libs.butterfly.compiler)
-
-    implementation(project(":module:verify"))
-    implementation(project(":module:main"))
-
-    implementation(project(":library:common"))
-    implementation(project(":library:framework"))
-    implementation(project(":library:network"))
+    implementation(libs.gson)
+    implementation(libs.glide)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.workmanager)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.ethan.zincum)
+    implementation(libs.ethan.kotlin.android.ext)
+    compileOnly(project(":library:framework"))
+    compileOnly(project(":library:common"))
+    compileOnly(project(":library:network"))
 }
