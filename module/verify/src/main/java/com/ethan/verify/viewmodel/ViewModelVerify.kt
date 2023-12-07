@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ethan.common.bean.BeanLogin
+import com.ethan.network.response.ResponseBase
 import com.ethan.network.viewmodel.BaseViewModel
 import com.ethan.verify.LoginState
 import com.ethan.verify.repository.RepositoryVerify
@@ -18,13 +19,17 @@ class ViewModelVerify(application: Application, val repositoryVerify: Repository
     private val _loginStateLiveData = MutableLiveData<LoginState>()
     val loginStateLiveData: LiveData<LoginState> = _loginStateLiveData
 
+    private val _loginFailedData = MutableLiveData<ResponseBase<BeanLogin>>()
+    val mLoginFailedData: LiveData<ResponseBase<BeanLogin>> = _loginFailedData
+
+
     fun requestLogin(username: String, password: String) {
         viewModelScope.launch {
             val mResponse = repositoryVerify.requestLogin(username = username, password = password)
             mLogger.info("LOG:ViewModelVerify:requestLogin mResponse={}", mGson.toJson(mResponse))
             if (mResponse.isFailed()) {
                 _loginStateLiveData.value = LoginState(loginState = LoginState.LOGIN_FAIL)
-                _loginResultLiveData.value = null
+                _loginFailedData.value = mResponse
             } else {
                 _loginStateLiveData.value = LoginState(loginState = LoginState.LOGIN_SUCCESS)
                 _loginResultLiveData.value = mResponse.data
@@ -33,10 +38,6 @@ class ViewModelVerify(application: Application, val repositoryVerify: Repository
 
         }
     }
-
-
-
-
 
 
 }

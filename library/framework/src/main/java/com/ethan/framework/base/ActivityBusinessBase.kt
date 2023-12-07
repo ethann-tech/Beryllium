@@ -1,8 +1,6 @@
 package com.ethan.framework.base
 
 
-import android.os.Build
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -19,11 +17,6 @@ abstract class ActivityBusinessBase<DB : ViewDataBinding> : ActivityDataBindingB
 
         WindowCompat.setDecorFitsSystemWindows(window,false)
 
-
-
-//        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-//            window.decorView.systemUiVisibility
-//        }
     }
     override fun initView() {
         mLoadingUtil =LoadingUtil(mContext)

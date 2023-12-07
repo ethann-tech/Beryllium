@@ -42,6 +42,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_user_name"
+                    android:text="Ethan.nj"
                     style="@style/LayoutWidthMatchHeightWrap" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -56,6 +57,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_password"
+                    android:text="ethan1234"
                     style="@style/LayoutWidthMatchHeightWrap" />
 
             </com.google.android.material.textfield.TextInputLayout>

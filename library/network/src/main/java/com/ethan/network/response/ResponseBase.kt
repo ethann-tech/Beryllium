@@ -9,7 +9,7 @@ data class ResponseBase<T>(
     var data: T?,
     @SerializedName(value = "code", alternate = ["errorCode"])
     var code: Int = 0,
-    @SerializedName(value = "message", alternate = ["errorMessage", "msg"])
+    @SerializedName(value = "message", alternate = ["errorMessage", "msg","errorMsg"])
     var message: String = ""
 ) : Serializable{
     /**

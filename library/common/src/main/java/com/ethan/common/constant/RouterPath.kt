@@ -9,5 +9,6 @@ object RouterPath {
     const val ACTIVITY_VERIFY_LOGIN="/verify/login"
 
     const val FRAGMENT_VERIFY_LOGIN="/verify/fragment_login"
+    const val FRAGMENT_VERIFY_REGISTER="verify/fragment_register"
 }
 

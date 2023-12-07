@@ -73,8 +73,8 @@ class FragmentLogin : FragmentBusinessBase<FragmentLoginBinding>() {
                 ToastUtil.showToast(mGson.toJson(it))
                 lifecycleScope.launch {
                     mContext.dataStore.putString(AppConstant.USER_INFO, value = mGson.toJson(it))
-//                    Butterfly.agile(scheme = RouterPath.ACTIVITY_MAIN_HOME).carry(context = mContext)
-//                    requireActivity().finish()
+                    Butterfly.agile(scheme = RouterPath.ACTIVITY_MAIN_HOME).carry(context = mContext)
+                    requireActivity().finish()
                 }
             }
         }
@@ -85,6 +85,10 @@ class FragmentLogin : FragmentBusinessBase<FragmentLoginBinding>() {
             }else{
                 mLogger.info("LOG:FragmentLogin:initView networkinfo={}",it.typeName)
             }
+        }
+
+        mViewMode.mLoginFailedData.observe(this){
+            ToastUtil.showToast(it.message)
         }
     }
 
