@@ -1,6 +1,6 @@
 package com.ethan.network.manager
 
-import com.ethan.common.constant.MyConstant
+import com.ethan.common.constant.AppConstant
 import com.ethan.common.util.LogUtil
 import com.tencent.mmkv.MMKV
 
@@ -14,7 +14,7 @@ object CookiesManager {
      */
     fun saveCookies(cookies: String) {
         val mmkv = MMKV.defaultMMKV()
-        mmkv.encode(MyConstant.HTTP_COOKIES_INFO, cookies)
+        mmkv.encode(AppConstant.HTTP_COOKIES_INFO, cookies)
     }
 
     /**
@@ -23,7 +23,7 @@ object CookiesManager {
      */
     fun getCookies(): String {
         val mmkv = MMKV.defaultMMKV()
-        return mmkv.decodeString(MyConstant.HTTP_COOKIES_INFO, "") ?: ""
+        return mmkv.decodeString(AppConstant.HTTP_COOKIES_INFO, "") ?: ""
     }
 
     /**

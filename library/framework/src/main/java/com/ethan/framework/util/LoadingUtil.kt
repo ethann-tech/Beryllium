@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import com.ethan.framework.widget.dialog.HuaweiLoadingDialog
 
-class LoadingUtil constructor(private val context: Context) {
+class LoadingUtil(private val context: Context) {
 
     private lateinit var mLoadingView: HuaweiLoadingDialog
     fun showLoading(text: String) {
@@ -27,6 +27,9 @@ class LoadingUtil constructor(private val context: Context) {
 
     fun hideLoading() {
         if (context is Activity && context.isFinishing) {
+            return
+        }
+        if (this::mLoadingView.isInitialized.not()){
             return
         }
         mLoadingView.let {

@@ -1,4 +1,6 @@
 package com.ethan.common.bean
+import android.text.TextUtils
+import androidx.compose.ui.unit.TextUnit
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -30,4 +32,8 @@ data class BeanLogin(
     var type: Int = 0,
     @SerializedName("username")
     var username: String = ""
-):Serializable
+):Serializable {
+    fun isValid():Boolean{
+        return TextUtils.isEmpty(username).not() || TextUtils.isEmpty(password).not()
+    }
+}

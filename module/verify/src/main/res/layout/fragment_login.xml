@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:shape="http://schemas.android.com/tools">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.ethan.verify.viewmodel.ViewModelVerify" />
+
+        <import type="com.ethan.verify.LoginState" />
+    </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -13,8 +19,8 @@
             android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/dp_72"
-                android:layout_height="@dimen/dp_72"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
                 android:layout_gravity="center"
                 app:srcCompat="@mipmap/ic_launcher" />
         </FrameLayout>
@@ -22,23 +28,67 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0"
-            android:layout_weight="3">
+            android:layout_weight="3.2"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_user_name"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_48"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_text_input_username"
+                style="@style/TextInputEditTextStyle"
                 android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginEnd="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_24"
-                app:bl_solid_color="@color/color_8f8e94"
-                app:bl_stroke_color="@color/color_0165b8"
-                app:bl_stroke_width="@dimen/dimen_1" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/edit_password"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/default_input_username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_user_name"
+                    style="@style/LayoutWidthMatchHeightWrap" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_til_password"
+                style="@style/TextInputEditTextStyle.Password"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:hint="@string/default_input_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_password"
+                    style="@style/LayoutWidthMatchHeightWrap" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_48"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unregistered" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                style="@style/AppCompatButtonViewMainStyle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_60"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:text="@string/default_login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.appcompat.widget.LinearLayoutCompat>

@@ -68,4 +68,6 @@ dependencies {
     implementation(libs.ethan.kotlin.android.ext)
     implementation(libs.toaster)
     implementation(libs.ethan.zincum)
+    compileOnly(libs.view.shape)
+    compileOnly(project(":library:framework"))
 }

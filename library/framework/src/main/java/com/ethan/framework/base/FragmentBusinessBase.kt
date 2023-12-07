@@ -17,7 +17,6 @@ abstract class FragmentBusinessBase<DB : ViewDataBinding> : FragmentDataBindingB
     }
 
     override fun showLoading(message: String) {
-
         mLoadingUtil.showLoading(text = message)
     }
     override fun hideLoading() {

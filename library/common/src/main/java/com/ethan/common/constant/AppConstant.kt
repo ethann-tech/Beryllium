@@ -6,8 +6,8 @@ package com.ethan.common.constant
  * @desc   常量管理
  */
 
-object MyConstant {
-    const val USER_INFO_DATA = "user_info_data" // 用户缓存数据
+object AppConstant {
+    const val USER_INFO = "userInfo"
 
     const val USER_PHONE_NUMBER = "user_phone_number"  // 用户手机号
 

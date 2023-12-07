@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputEditTextStyle" parent="LayoutWidthMatchHeightWrap">
+        <item name="boxStrokeColor">@color/color_222427</item>
+        <item name="boxBackgroundColor">@color/transparent</item>
+        <item name="cursorColor">@color/color_222427</item>
+        <item name="hintTextColor">@color/color_222427</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="TextInputEditTextStyle.Password" >
+        <item name="passwordToggleEnabled">true</item>
+    </style>
+
+
+</resources>

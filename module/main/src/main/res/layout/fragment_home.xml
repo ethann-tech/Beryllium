@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-
-    <com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/layout_coordinator"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".ui.activity.ActivityMain">
+            android:layout_height="match_parent">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/layout_app_bar"
@@ -28,7 +26,7 @@
                     <com.youth.banner.Banner
                         android:id="@+id/banner"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_180" />
+                        android:layout_height="@dimen/dp_198" />
 
 
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
