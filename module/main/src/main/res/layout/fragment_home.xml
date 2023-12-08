@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <com.scwang.smart.refresh.layout.SmartRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -34,15 +34,33 @@
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_42" />
+                    android:layout_height="@dimen/dp_42"
+                    app:tabGravity="center"
+                    app:tabIndicator="@null"
+                    app:tabIndicatorColor="@color/black"
+                    app:tabMode="auto"
+                    app:tabPaddingEnd="@dimen/dp_16"
+                    app:tabPaddingStart="@dimen/dp_16"
+                    app:tabRippleColor="@color/transparent"
+                    app:tabSelectedTextColor="@color/black"
+                    app:tabTextColor="@color/color_898e92" />
             </com.google.android.material.appbar.AppBarLayout>
 
 
-            <androidx.viewpager2.widget.ViewPager2
+            <com.ethan.common.viewpager2.ViewPager2Container
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/tab_view_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"  />
+
+            </com.ethan.common.viewpager2.ViewPager2Container>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 

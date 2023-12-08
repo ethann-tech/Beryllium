@@ -19,7 +19,6 @@ open class RepositoryBase {
                 requestCall()
             }
         } ?: return null
-        mLogger.debug("LOG:RepositoryBase:requestResponse response={}",mGson.toJson(response) )
         if (response.isFailed()) {
             throw ApiException(response.code, response.message)
         }

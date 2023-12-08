@@ -6,12 +6,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.ethan.framework.util.LoadingUtil
 import com.ethan.zincum.base.ActivityDataBindingBase
+import com.google.gson.Gson
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 abstract class ActivityBusinessBase<DB : ViewDataBinding> : ActivityDataBindingBase<DB>() ,KoinComponent{
     private lateinit var mLoadingUtil: LoadingUtil
     protected val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
-
+    protected val mGson:Gson by inject<Gson>()
     override fun initWindowAttributes() {
         val controller =WindowCompat.getInsetsController(window,window.decorView)
 

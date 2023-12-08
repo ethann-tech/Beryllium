@@ -2,6 +2,7 @@ package com.ethan.network.api
 
 import com.ethan.common.bean.BeanBanner
 import com.ethan.common.bean.BeanLogin
+import com.ethan.common.bean.BeanProjectCategory
 import com.ethan.network.response.ResponseBase
 import retrofit2.Response
 import retrofit2.http.GET
@@ -28,4 +29,11 @@ interface ApiInterface {
      */
     @POST("/user/login")
     suspend fun requestLogin(@Query("username" )username:String,@Query("password") password:String):ResponseBase<BeanLogin>?
+
+    /**
+     * 项目分类
+     */
+    @GET("project/tree/json")
+    suspend fun requestProjectCategory():ResponseBase<List<BeanProjectCategory>>
+
 }

@@ -1,17 +1,18 @@
 package com.ethan.framework.base
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.ethan.framework.util.LoadingUtil
 import com.ethan.zincum.base.FragmentDataBindingBase
+import com.google.gson.Gson
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 abstract class FragmentBusinessBase<DB : ViewDataBinding> : FragmentDataBindingBase<DB>(),KoinComponent {
     private lateinit var mLoadingUtil: LoadingUtil
     protected val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
+    protected val mGson: Gson by inject<Gson>()
     override fun initView(view: View, savedInstanceState: Bundle?) {
         mLoadingUtil = LoadingUtil(mContext)
     }

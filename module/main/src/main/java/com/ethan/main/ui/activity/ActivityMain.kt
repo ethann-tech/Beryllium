@@ -18,7 +18,6 @@ import zlc.season.butterfly.annotation.Agile
 @AndroidEntryPoint
 @Agile(scheme = RouterPath.ACTIVITY_MAIN_HOME)
 class ActivityMain : ActivityBusinessBase<ActivityMainBinding>() {
-    private val mGson: Gson by inject<Gson>()
     private val mFragments = arrayListOf(FragmentHome.newInstance(), FragmentCategory(), FragmentSystem(), FragmentMine())
     private val mAdapter: AdapterNavMain by lazy { AdapterNavMain(mFragments = mFragments, fm = supportFragmentManager, lifecycle = lifecycle) }
     override fun initWindowAttributes() {

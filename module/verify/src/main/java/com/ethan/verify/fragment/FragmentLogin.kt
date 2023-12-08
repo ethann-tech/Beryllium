@@ -28,7 +28,6 @@ import java.util.concurrent.TimeUnit
 class FragmentLogin : FragmentBusinessBase<FragmentLoginBinding>() {
 
     private val mViewMode by inject<ViewModelVerify>()
-    private val mGson: Gson by inject<Gson>()
     override fun getLayoutResId(): Int = R.layout.fragment_login
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
