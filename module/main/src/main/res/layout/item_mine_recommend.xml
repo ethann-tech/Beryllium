@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_64"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:background="@drawable/bg_mine_recommend_item"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_6">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_author"
+            style="@style/TextViewSecondStyle"
+            android:layout_marginTop="@dimen/dp_6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="作者:Ethan" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date"
+            style="@style/TextViewSecondStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_author"
+            tools:text="2023-12-28 10:37" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            style="@style/TextViewMainStyle"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            tools:text="标题:标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_chapter"
+            style="@style/TextViewSecondStyle"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="@id/tv_author"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="公众号/郭森" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_collect"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:src="@drawable/selector_mine_collect"
+            app:layout_constraintEnd_toStartOf="@id/img_concern"
+            app:layout_constraintTop_toTopOf="@id/tv_chapter" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_concern"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_22"
+            android:padding="@dimen/dp_2"
+            android:src="@drawable/selector_mine_collect_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_chapter"
+            app:tint="@color/color_222427" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

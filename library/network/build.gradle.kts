@@ -80,7 +80,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.ktor)
     implementation(libs.koin.logger.slf4j)
-    implementation(libs.ethan.kotlin.android.ext)
+//    implementation(libs.ethan.kotlin.android.ext)
     implementation(libs.ethan.zincum)
     androidTestImplementation(platform(libs.platform.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)

@@ -62,7 +62,7 @@ android {
 }
 
 dependencies {
-    implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
+    implementation(fileTree("dir" to "libs", "include" to listOf("*.jar","*.aar")))
     implementation(libs.androidx.multidex)
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
@@ -98,16 +98,18 @@ dependencies {
     implementation(libs.slf4j.api)
     implementation(libs.view.shape)
     implementation(libs.logback.android)
-    implementation(libs.ethan.kotlin.android.ext) // 好用的三方库
+//    implementation(libs.ethan.kotlin.android.ext) // 好用的三方库
     implementation(libs.ethan.zincum)
     implementation(libs.toaster)
     implementation(libs.butterfly)
     implementation(libs.butterfly.compose)
     kapt(libs.butterfly.compiler)
-
+    implementation(libs.live.event.bus)
+    implementation(libs.refresh.kernel)
+    implementation(libs.refresh.header.classics)
+    implementation(libs.refresh.footer.classics)
     implementation(project(":module:verify"))
     implementation(project(":module:main"))
-
     implementation(project(":library:common"))
     implementation(project(":library:framework"))
     implementation(project(":library:network"))

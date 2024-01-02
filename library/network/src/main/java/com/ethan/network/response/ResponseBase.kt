@@ -17,5 +17,6 @@ data class ResponseBase<T>(
      */
     fun isFailed(): Boolean = code != 0
 
+    fun isSuccess(): Boolean = code == 0
   
 }

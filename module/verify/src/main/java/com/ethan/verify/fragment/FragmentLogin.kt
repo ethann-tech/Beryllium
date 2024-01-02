@@ -16,7 +16,7 @@ import com.ethan.verify.viewmodel.ViewModelVerify
 import com.google.gson.Gson
 import com.jakewharton.rxbinding4.view.clicks
 import io.github.uhsk.kit.android.dataStore
-import io.github.uhsk.kit.androidx.datastore.putString
+import io.github.uhsk.kit.jetpack.datastore.putString
 import kotlinx.coroutines.launch
 import org.koin.core.component.inject
 import zlc.season.butterfly.Butterfly

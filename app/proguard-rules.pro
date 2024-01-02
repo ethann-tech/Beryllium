@@ -31,3 +31,9 @@
 -keep @zlc.season.butterfly.annotation.Agile class * {*;}
 -keep @zlc.season.butterfly.annotation.Evade class * {*;}
 -keep @zlc.season.butterfly.annotation.EvadeImpl class * {*;}
+
+# liveeventbus 消息总线
+-dontwarn com.jeremyliao.liveeventbus.**
+-keep class com.jeremyliao.liveeventbus.** { *; }
+-keep class androidx.lifecycle.** { *; }
+-keep class androidx.arch.core.** { *; }

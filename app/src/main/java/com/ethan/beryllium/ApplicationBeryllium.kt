@@ -8,13 +8,15 @@ import com.ethan.framework.ApplicationLifecycle
 import com.ethan.framework.log.ImplLoggerManager
 import com.hjq.toast.ToastStrategy
 import com.hjq.toast.Toaster
+import com.scwang.smart.refresh.footer.ClassicsFooter
+import com.scwang.smart.refresh.header.ClassicsHeader
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import dagger.hilt.android.HiltAndroidApp
 import io.github.uhsk.kit.format
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import java.util.Date
-import java.util.logging.Level
 import kotlin.coroutines.coroutineContext
 
 /**
@@ -34,6 +36,7 @@ class ApplicationBeryllium : ApplicationLifecycle() {
         initLogger()
         initToaster()
         initKoin()
+        initSmartRefreshLayout()
     }
 
     private suspend fun initLogger() {
@@ -63,5 +66,10 @@ class ApplicationBeryllium : ApplicationLifecycle() {
             androidContext(this@ApplicationBeryllium)
             modules(allModule)
         }
+    }
+
+    private fun initSmartRefreshLayout() {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ -> ClassicsHeader(context) }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, _ -> ClassicsFooter(context).setDrawableSize(20f) }
     }
 }

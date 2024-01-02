@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.logback.android)
     implementation(libs.slf4j.api)
     implementation(libs.ethan.zincum)
-    implementation(libs.ethan.kotlin.android.ext)
+//    implementation(libs.ethan.kotlin.android.ext)
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)

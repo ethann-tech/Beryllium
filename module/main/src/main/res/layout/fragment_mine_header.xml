@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:background="@color/color_b8cfe6"
+                android:paddingStart="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingEnd="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_16">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_user_icon"
+                    android:layout_width="@dimen/dp_65"
+                    android:layout_height="@dimen/dp_65"
+                    android:src="@mipmap/default_head"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_username"
+                    style="@style/TextViewMainStyle"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/not_login"
+                    app:layout_constraintBottom_toTopOf="@id/tv_desc"
+                    app:layout_constraintStart_toEndOf="@id/image_user_icon"
+                    app:layout_constraintTop_toTopOf="@id/image_user_icon"
+                    tools:text="@string/not_login" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_desc"
+                    style="@style/TextViewSecondStyle"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:text="@string/home_mine_login_desc"
+                    app:layout_constraintBottom_toBottomOf="@id/image_user_icon"
+                    app:layout_constraintStart_toEndOf="@id/image_user_icon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_username"
+                    tools:text="@string/home_mine_login_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="-22dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/bg_mine_short_video"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dp_8"
+                android:paddingEnd="@dimen/dp_8">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_mine_work" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextViewMainStyle"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:text="短视频" />
+
+                <View
+                    android:layout_width="0.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextViewMainStyle"
+                    android:text="—我的作品" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:text="|" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextViewMainStyle"
+                    android:text="—我喜欢的" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <include
+                android:id="@+id/include_mine_service"
+                layout="@layout/fragment_mine_head_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_recommend"
+                style="@style/TextViewMainStyle"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="@string/mine_recommend"
+                android:textAllCaps="false"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

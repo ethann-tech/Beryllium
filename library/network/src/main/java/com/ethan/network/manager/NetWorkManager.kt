@@ -40,12 +40,17 @@ class NetWorkManager private constructor() {
     private fun provideRetrofit(): Retrofit = Retrofit.Builder().baseUrl(HttpConstants.BASE_URL).client(provideOkHttpClient()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava3CallAdapterFactory.create()).build()
 
 
-    private fun provideOkHttpClient(): OkHttpClient = OkHttpClient().newBuilder().connectTimeout(timeout = 30L, TimeUnit.SECONDS).readTimeout(timeout = 30L, TimeUnit.SECONDS).cache(Cache(directory = ApplicationLifecycle.instance().cacheDir, maxSize = 100 * 1024 * 102)).retryOnConnectionFailure(retryOnConnectionFailure = true).addInterceptor(
+    private fun provideOkHttpClient(): OkHttpClient = OkHttpClient()
+        .newBuilder()
+        .connectTimeout(timeout = 30L, TimeUnit.SECONDS)
+        .readTimeout(timeout = 30L, TimeUnit.SECONDS)
+        .cache(Cache(directory = ApplicationLifecycle.instance().cacheDir, maxSize = 100 * 1024 * 1024))
+        .retryOnConnectionFailure(retryOnConnectionFailure = true).addInterceptor(
             HttpLoggingInterceptor(logger = HttpLoggerInterceptor()).setLevel(HttpLoggingInterceptor.Level.BASIC)
         ).sslSocketFactory(sslSocketFactory, trustAllCerts).hostnameVerifier(hostnameVerifier = { _, _ -> true }).build()
 
 
-    fun provideSSLSocketFactory(): SSLSocketFactory {
+    private fun provideSSLSocketFactory(): SSLSocketFactory {
         var sslSocketFactory: SSLSocketFactory? = null
         try {
             val sc = SSLContext.getInstance("TLS")

@@ -25,15 +25,15 @@ class ViewModelHome (application: Application,private val mRepositoryHome:Reposi
             _bannerListData.value = mRepositoryHome.requestHomeBanner()
         }
     }
-    fun requestProjectCategoryList(){
+    fun requestProjectCategoryList() {
         viewModelScope.launch {
-         val response = mRepositoryHome.requestProjectCategoryList()
-            mLogger.info("LOG:ViewModelHome:requestProjectCategoryList response={}", mGson.toJson(response))
-            if (response.isFailed()){
-                _errorMsg.value =response.message
-            }else{
-                _projectCategoryListResult.value =response.data!!
+            val response = mRepositoryHome.requestProjectCategoryList()
+            if (response.isFailed()) {
+                _errorMsg.value = response.message
+            } else {
+                _projectCategoryListResult.value = response.data!!
             }
+            mLogger.info("LOG:ViewModelHome:requestProjectCategoryList response={}", mGson.toJson(response))
         }
     }
 

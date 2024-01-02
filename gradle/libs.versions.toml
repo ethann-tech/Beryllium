@@ -19,9 +19,9 @@ material = "1.9.0"
 legacy-support-v4 = "1.0.0"
 lifecycle-livedata-ktx = "2.6.1"
 lifecycle-viewmodel-ktx = "2.6.1"
-zxing_version = "3.3.3"
+zxing_version = "3.4.1"
 koin_version = "3.5.0"
-
+live-event-bus-version="1.8.0"
 view-shape-version="1.7.6"
 [libraries]
 #
@@ -29,7 +29,7 @@ view-shape-version="1.7.6"
 #
 androidx-core = 'androidx.core:core-ktx:1.12.0'
 androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
-androidx-material = 'com.google.android.material:material:1.10.0'
+androidx-material = 'com.google.android.material:material:1.11.0'
 androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
 androidx-multidex = 'androidx.multidex:multidex:2.0.1'
 androidx-viewpage2 = 'androidx.viewpager2:viewpager2:1.0.0'
@@ -54,8 +54,8 @@ androidx-room-runtime = 'androidx.room:room-runtime:2.6.0'
 androidx-room-guava = 'androidx.room:room-guava:2.6.0'
 androidx-room-testing = 'androidx.room:room-testing:2.6.0'
 
-kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
+kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1'
+kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.21'
 # https://insert-koin.io/docs/setup/koin
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin_version" }
 koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin_version" }
@@ -70,9 +70,9 @@ test-android-ext = 'androidx.test.ext:junit:1.1.5'
 test-android-espresso = 'androidx.test.espresso:espresso-core:3.5.1'
 leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
 
-androidx-activity-compose = 'androidx.activity:activity-compose:1.8.0'
+androidx-activity-compose = 'androidx.activity:activity-compose:1.8.2'
 androidx-compose-ui = 'androidx.compose.ui:ui:1.5.4'
-androidx-compose-runtime = 'androidx.compose.runtime:runtime:1.6.0-alpha08'
+androidx-compose-runtime = 'androidx.compose.runtime:runtime:1.6.0-beta03'
 androidx-compose-ui-graphics = 'androidx.compose.ui:ui-graphics:1.5.4'
 androidx-compose-ui-tooling-preview = 'androidx.compose.ui:ui-tooling-preview:1.5.4'
 androidx-compose-material3 = 'androidx.compose.material3:material3:1.1.2'
@@ -81,8 +81,8 @@ androidx-compose-ui-tooling = 'androidx.compose.ui:ui-tooling:1.5.4' # debugImpl
 androidx-compose-ui-test-manifest = 'androidx.compose.ui:ui-test-manifest:1.5.4'# debugImplementation
 
 # https://developer.android.com/training/dependency-injection/hilt-android?hl=zh-cn#kts
-google-hilt-android = 'com.google.dagger:hilt-android:2.48'
-google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.48' # kapt
+google-hilt-android = 'com.google.dagger:hilt-android:2.48.1'
+google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.48.1' # kapt
 
 jetbrains-annotations = 'org.jetbrains:annotations:24.0.1'
 
@@ -94,15 +94,13 @@ retrofit-adapter-rxjava3 = 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 retrofit-converter-gson = 'com.squareup.retrofit2:converter-gson:2.9.0'
 retrofit-converter-scalars = 'com.squareup.retrofit2:converter-scalars:2.9.0'
 
-
-
 rxkotlin = 'io.reactivex.rxjava3:rxkotlin:3.0.1'
 rxlifecycle-lifecycle-kotlin = 'com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
 rxbinding = "com.jakewharton.rxbinding4:rxbinding:4.0.0"
 rxbinding-core = "com.jakewharton.rxbinding4:rxbinding-core:4.0.0"
 rxbinding-appcompat = "com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0"
 rxjava3-rxandroid = 'io.reactivex.rxjava3:rxandroid:3.0.2'
-rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.5'
+rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.6'
 # viewbinding
 viewbinding-ktx = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
 
@@ -114,8 +112,8 @@ gson = 'com.google.code.gson:gson:2.10.1'
 android-database-sqlcipher = 'net.zetetic:android-database-sqlcipher:4.4.3'
 android-oaid = 'com.github.gzu-liyujiang:Android_CN_OAID:4.2.3'
 # 图片处理
-glide = 'com.github.bumptech.glide:glide:4.15.0'
-glide-compiler='com.github.bumptech.glide:compiler:4.9.0'
+glide = 'com.github.bumptech.glide:glide:4.16.0'
+glide-compiler='com.github.bumptech.glide:compiler:4.16.0'
 imagepicker = 'com.lcw.library:imagepicker:2.2.7'
 
 # commons
@@ -127,8 +125,8 @@ greenrobot-eventbus = 'org.greenrobot:eventbus:3.3.1'
 # 日志框架
 slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
 logback-android = 'com.github.tony19:logback-android:3.0.0'
-
 #logback-classic ='ch.qos.logback:logback-classic:1.2.11'
+
 # 权限管理
 permissions-xxpermissions = 'com.github.getActivity:XXPermissions:18.0'
 permissions-nopermission = 'ru.alexbykov:nopermission:1.1.2'
@@ -155,11 +153,10 @@ qmuiteam-qmui = 'com.qmuiteam:qmui:2.0.1'
 qmuiteam-arch = 'com.qmuiteam:arch:2.0.1'
 qmuiteam-arch-compiler = 'com.qmuiteam:arch-compiler:2.0.1' # kapt
 tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
-
 wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
-
-ethan-kotlin-android-ext ='com.github.ethann-tech:kotlin-android-extension:1.0.5'
-ethan-zincum = 'com.github.ethann-tech:Zincum:0.0.5'
+ethan-zincum = 'com.github.ethann-tech:Zincum:0.1.0'
+# 消息总线 https://github.com/JeremyLiao/LiveEventBus
+live-event-bus ={group="io.github.jeremyliao",name="live-event-bus",version.ref="live-event-bus-version"}
 
 # other
 androidwheelview = 'com.github.weidongjian:androidWheelView:1.0.0'

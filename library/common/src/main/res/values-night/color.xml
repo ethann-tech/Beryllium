@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="window_background_primary">@color/color_222427</color>
+    <color name="window_background_second">@color/color_222427</color>
+</resources>

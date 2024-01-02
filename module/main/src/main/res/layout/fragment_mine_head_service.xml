@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_16"
+    android:layout_marginEnd="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_16"
+    android:background="@drawable/bg_mine_service">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_service_title"
+        style="@style/TextViewMainStyle"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:text="@string/mine_service_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/color_979797"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_service_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_navigation"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_coupon_ico"
+        android:text="@string/mine_navigation"
+        app:layout_constraintEnd_toStartOf="@+id/tv_life_cycle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_life_cycle"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_comment_lab"
+        android:text="@string/mine_life_cycle"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data_binging"
+        app:layout_constraintStart_toEndOf="@+id/tv_navigation"
+        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_data_binging"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_service_ico"
+        android:text="@string/mine_data_binging"
+        app:layout_constraintEnd_toStartOf="@+id/tv_livedata"
+        app:layout_constraintStart_toEndOf="@+id/tv_life_cycle"
+        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_livedata"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_reduced_amount"
+        android:text="@string/mine_livedata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_binging"
+        app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_view_model"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_exp_ico"
+        android:text="@string/mine_view_model"
+        app:layout_constraintEnd_toStartOf="@+id/tv_paging"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_paging"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/ic_mine_help"
+        android:text="@string/mine_paging"
+        app:layout_constraintEnd_toStartOf="@+id/tv_room"
+        app:layout_constraintStart_toEndOf="@+id/tv_view_model"
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_room"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_consign_earnings"
+        android:text="@string/mine_room"
+        app:layout_constraintEnd_toStartOf="@+id/tv_hilt"
+        app:layout_constraintStart_toEndOf="@+id/tv_paging"
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_hilt"
+        style="@style/style_mine_service"
+        android:drawableTop="@mipmap/mine_sale_center"
+        android:text="@string/mine_hilt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_room"
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,8 @@
 <resources>
 
     <style name="Theme.Common" parent="Theme.MaterialComponents.Light.NoActionBar" >
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/window_background_primary</item>
+        <item name="android:windowBackground">@color/window_background_primary</item>
     </style>
 
 </resources>

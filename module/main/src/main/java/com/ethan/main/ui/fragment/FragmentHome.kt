@@ -3,23 +3,17 @@ package com.ethan.main.ui.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.ethan.framework.base.FragmentBusinessBase
 import com.ethan.framework.util.ToastUtil
 import com.ethan.main.R
 import com.ethan.main.databinding.FragmentHomeBinding
 import com.ethan.main.ui.adapter.AdapterFragmentTab
 import com.ethan.main.ui.adapter.AdapterHomeBanner
-import com.ethan.main.ui.adapter.AdapterNavMain
 import com.ethan.main.ui.viewmodel.ViewModelHome
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.hjq.toast.Toaster
 import com.youth.banner.indicator.CircleIndicator
-import io.github.uhsk.kit.libs.codec.binary.StringUtils
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.onStart
 import org.koin.core.component.inject
 
 class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBinding>() {
@@ -30,6 +24,7 @@ class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBind
     private  var mChildFragment = hashMapOf<String,Fragment>();
     companion object {
         fun newInstance() = FragmentHome()
+
     }
 
 

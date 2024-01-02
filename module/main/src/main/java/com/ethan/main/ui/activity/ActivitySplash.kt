@@ -9,7 +9,7 @@ import com.ethan.main.R
 import com.ethan.main.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.uhsk.kit.android.dataStore
-import io.github.uhsk.kit.androidx.datastore.getString
+import io.github.uhsk.kit.jetpack.datastore.getString
 import kotlinx.coroutines.launch
 import zlc.season.butterfly.Butterfly
 import zlc.season.butterfly.annotation.Agile
@@ -40,11 +40,7 @@ class ActivitySplash : ActivityBusinessBase<ActivitySplashBinding>() {
             finish()
         })
     }
-
-
-    override fun initListener() {
-
-    }
+    override fun initListener() { }
 
     override fun bindLayoutView() {
         super.bindLayoutView()
