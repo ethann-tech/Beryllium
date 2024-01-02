@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
     <style name="TextViewMainStyle" parent="LayoutWidthWrapHeightWrap">
         <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:textColor">@color/color_222427</item>

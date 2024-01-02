@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/bg_welcome</item>
+        <!--  v21之后，该属性必须设置为false,不然图片无法沉浸到状态栏-->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

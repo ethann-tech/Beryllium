@@ -5,7 +5,7 @@
             android:name="com.ethan.main.ui.activity.ActivitySplash"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

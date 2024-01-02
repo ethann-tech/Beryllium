@@ -4,13 +4,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+        android:background="@mipmap/bg_welcome"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@mipmap/bg_welcome" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_skip"
