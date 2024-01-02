@@ -22,7 +22,7 @@ class ActivitySplash : ActivityBusinessBase<ActivitySplashBinding>() {
     override fun initWindowAttributes() {}
 
     override fun initView() {
-
+        window.setBackgroundDrawable(null)
         countDownCoroutines(total = 3, scope = lifecycleScope, onTick = {
             mBinding.tvSkip.text = "跳过".plus(it)
         }, onStart = {
@@ -45,5 +45,10 @@ class ActivitySplash : ActivityBusinessBase<ActivitySplashBinding>() {
     override fun bindLayoutView() {
         super.bindLayoutView()
         mBinding.tvSkip.text = "跳过3s"
+    }
+
+    override fun onStart() {
+        super.onStart()
+
     }
 }

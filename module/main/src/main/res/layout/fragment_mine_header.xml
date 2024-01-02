@@ -7,22 +7,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_mine_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/color_b8cfe6"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_120"
-                android:background="@color/color_b8cfe6"
+                android:layout_height="@dimen/dp_18"
+                android:background="@color/window_background_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/dp_120"
                 android:paddingStart="@dimen/dp_16"
                 android:paddingTop="@dimen/dp_16"
                 android:paddingEnd="@dimen/dp_16"
-                android:paddingBottom="@dimen/dp_16">
+                android:paddingBottom="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_settings"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:src="@mipmap/mine_setting_ico"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/image_user_icon"
@@ -55,16 +80,20 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:id="@+id/layout_mine_works"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_44"
                 android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginTop="-22dp"
                 android:layout_marginEnd="@dimen/dp_16"
                 android:background="@drawable/bg_mine_short_video"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/dp_8"
-                android:paddingEnd="@dimen/dp_8">
+                android:paddingEnd="@dimen/dp_8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_user_info">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
@@ -97,25 +126,31 @@
                     android:text="—我喜欢的" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <include
-                android:id="@+id/include_mine_service"
-                layout="@layout/fragment_mine_head_service" />
+        <include
+            android:id="@+id/include_mine_service"
+            layout="@layout/fragment_mine_head_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/layout_mine_header" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_recommend"
-                style="@style/TextViewMainStyle"
-                android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginTop="@dimen/dp_16"
-                android:layout_marginBottom="@dimen/dp_16"
-                android:text="@string/mine_recommend"
-                android:textAllCaps="false"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_recommend"
+            style="@style/TextViewMainStyle"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:text="@string/mine_recommend"
+            android:textAllCaps="false"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include_mine_service" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
+    <style name="AppTheme" parent="Theme.Common">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+    </style>
     <style name="TextViewMainStyle" parent="LayoutWidthWrapHeightWrap">
         <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:textColor">@color/color_222427</item>
