@@ -14,5 +14,6 @@
             android:name="com.ethan.main.ui.activity.ActivityMain"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.activity.ActivityArticleDetail" android:exported="false" android:windowSoftInputMode="adjustPan"/>
     </application>
 </manifest>

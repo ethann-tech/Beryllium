@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.koin.core.component.inject
 import zlc.season.butterfly.annotation.Agile
 
-@AndroidEntryPoint
 @Agile(scheme = RouterPath.ACTIVITY_MAIN_HOME)
 class ActivityMain : ActivityBusinessBase<ActivityMainBinding>() {
     private val mFragments = arrayListOf(FragmentHome.newInstance(), FragmentCategory(), FragmentSystem(), FragmentMine())

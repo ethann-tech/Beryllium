@@ -70,6 +70,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.toaster)
     implementation(libs.ethan.zincum)
+    implementation(libs.tencent.tbsdk)
     compileOnly(libs.view.shape)
     compileOnly(project(":library:framework"))
 }

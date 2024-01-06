@@ -15,6 +15,11 @@
         <item name="android:textColor">@color/color_898e92</item>
         <item name="textAllCaps">false</item>
     </style>
+    <style name="TextViewSecondStyle2" parent="LayoutWidth0HeightWrap">
+        <item name="android:textSize">@dimen/text_size_11</item>
+        <item name="android:textColor">@color/color_898e92</item>
+        <item name="textAllCaps">false</item>
+    </style>
 
     <style name="AppCompatButtonViewMainStyle" parent="LayoutWidthMatchHeightWrap" >
         <item name="android:layout_height">@dimen/dp_48</item>

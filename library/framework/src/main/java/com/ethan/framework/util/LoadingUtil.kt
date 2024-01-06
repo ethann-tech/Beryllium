@@ -6,11 +6,9 @@ import com.ethan.framework.widget.dialog.HuaweiLoadingDialog
 
 class LoadingUtil(private val context: Context) {
 
-    private lateinit var mLoadingView: HuaweiLoadingDialog
+    private val mLoadingView: HuaweiLoadingDialog by lazy { HuaweiLoadingDialog(context = context) }
     fun showLoading(text: String) {
-        if (this::mLoadingView.isInitialized) {
-            mLoadingView = HuaweiLoadingDialog(context = context)
-        }
+
         if (mLoadingView.isShowing) {
             mLoadingView.dismiss()
         }
@@ -27,9 +25,6 @@ class LoadingUtil(private val context: Context) {
 
     fun hideLoading() {
         if (context is Activity && context.isFinishing) {
-            return
-        }
-        if (this::mLoadingView.isInitialized.not()){
             return
         }
         mLoadingView.let {

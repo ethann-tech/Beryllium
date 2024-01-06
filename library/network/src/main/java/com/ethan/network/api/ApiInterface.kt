@@ -1,9 +1,11 @@
 package com.ethan.network.api
 
 import com.ethan.common.bean.BeanBanner
+import com.ethan.common.bean.BeanCategoryResponse
 import com.ethan.common.bean.BeanLogin
 import com.ethan.common.bean.BeanProjectCategory
 import com.ethan.common.bean.BeanRecommendResponse
+import com.ethan.common.bean.BeanSystem
 import com.ethan.network.response.ResponseBase
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -38,4 +40,13 @@ interface ApiInterface {
     @GET("project/tree/json")
     suspend fun requestProjectCategory(): ResponseBase<List<BeanProjectCategory>>
 
+
+    @GET("/navi/json")
+    suspend fun requestCategoryList(): ResponseBase<List<BeanCategoryResponse>>
+
+    /**
+     * 体系一级分类
+     */
+    @GET("/tree/json")
+    suspend fun requestSystemList(): ResponseBase<List<BeanSystem>>
 }

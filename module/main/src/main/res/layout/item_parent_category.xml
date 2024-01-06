@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="@dimen/dp_48">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_category_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:gravity="center"
+            app:autoSizeMaxTextSize="@dimen/text_size_14"
+            app:autoSizeMinTextSize="@dimen/text_size_8"
+            app:autoSizeStepGranularity="1dp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="测试测试" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_indicator"
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="match_parent"
+            android:background="@drawable/indicator_category_parent"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

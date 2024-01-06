@@ -96,6 +96,7 @@ dependencies {
     implementation(libs.ultimatebarx)
     implementation(libs.live.event.bus)
     implementation(libs.baserecyclerviewadapterhelper)
+    implementation(libs.tencent.tbsdk)
     compileOnly(project(":library:framework"))
     compileOnly(project(":library:common"))
     compileOnly(project(":library:network"))
