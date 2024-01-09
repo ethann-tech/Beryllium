@@ -30,4 +30,11 @@
         <item name="backgroundTint">@color/color_222427</item>
         <item name="backgroundTintMode">multiply</item>
     </style>
+
+        <style name="tabLayoutStyle" parent="TextAppearance.AppCompat.Button">
+            <item name="android:textSize">@dimen/text_size_14</item>
+            <item name="android:textColor">@color/color_979797</item>
+            <item name="android:textAllCaps">false</item>
+        </style>
+
 </resources>

@@ -3,6 +3,7 @@ package com.ethan.main.ui.fragment
 import android.os.Bundle
 import android.view.View
 import com.chad.library.adapter.base.util.setOnDebouncedItemClick
+import com.ethan.common.constant.RouterPath
 import com.ethan.framework.base.FragmentBusinessBase
 import com.ethan.main.R
 import com.ethan.main.databinding.FragmentSystemBinding
@@ -12,6 +13,7 @@ import com.hjq.toast.Toaster
 import com.zackratos.ultimatebarx.ultimatebarx.java.UltimateBarX
 import io.github.uhsk.kit.asColor
 import org.koin.android.ext.android.inject
+import zlc.season.butterfly.Butterfly
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -27,9 +29,11 @@ class FragmentSystem : FragmentBusinessBase<FragmentSystemBinding>() {
     override fun getLayoutResId(): Int = R.layout.fragment_system
     override fun initData() {
         super.initData()
+        showLoading("加载中...")
         mViewModel.requestSystemList()
         mViewModel.mSystemList.observe(this) {
             mAdapter.submitList(list = it)
+            hideLoading()
         }
     }
 
@@ -42,7 +46,7 @@ class FragmentSystem : FragmentBusinessBase<FragmentSystemBinding>() {
 
     private fun initListener() {
         mAdapter.setOnDebouncedItemClick { adapter, view, position ->
-            Toaster.show("点击了：${mAdapter.getItem(position)?.name}")
+            Butterfly.agile(scheme = RouterPath.ACTIVITY_SYSTEM_TAB).params("beanSystem" to mAdapter.getItem(position)).carry(mContext)
         }
     }
 }

@@ -21,10 +21,10 @@ class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBind
     private val mAdapterBanner: AdapterHomeBanner by lazy { AdapterHomeBanner(mutableListOf()) }
 
 
-    private  var mChildFragment = hashMapOf<String,Fragment>();
+    private var mChildFragment = hashMapOf<String, Fragment>()
+
     companion object {
         fun newInstance() = FragmentHome()
-
     }
 
 
@@ -33,13 +33,13 @@ class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBind
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         mBinding.banner.addBannerLifecycleObserver(viewLifecycleOwner).setAdapter(mAdapterBanner).indicator = CircleIndicator(context)
+        showLoading("加载中...")
     }
 
     override fun initData() {
         super.initData()
         mLogger.info("LOG:FragmentHome:initData")
-        mViewModel.requestHomeBanner()
-//        initListener()
+        mViewModel.requestHomeBanner() //        initListener()
         mViewModel.mBannerListData.observe(viewLifecycleOwner) {
             mAdapterBanner.setDatas(it)
         }
@@ -47,34 +47,33 @@ class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBind
             Toaster.show("$position")
         }
 
-        mViewModel.mErrorMsgLiveData.observe(this){
-            if (it.isNotBlank()){
+        mViewModel.mErrorMsgLiveData.observe(this) {
+            if (it.isNotBlank()) {
                 ToastUtil.showToast(it)
-            }else{
+            } else {
                 ToastUtil.showToast("项目列表获取错误")
             }
-
         }
-        mViewModel.mProjectCategoryList.observe(this){
-           mBinding.tabLayout.apply {
-             it.forEach {
-//                 addTab(this.newTab().setText(it.name))
-                 mChildFragment[it.name] = FragmentTab.newInstance(it)
-             }
-               mBinding.tabViewPage.apply {
-                   adapter = AdapterFragmentTab(mChildFragment,childFragmentManager, lifecycle = lifecycle)
-               }
-               TabLayoutMediator(mBinding.tabLayout,mBinding.tabViewPage,false,true){
-                       tab,position->
-                   tab.text =mChildFragment.keys.toList()[position]
+        mViewModel.mProjectCategoryList.observe(this) {
+            mBinding.tabLayout.apply {
+                it.forEach {
+                    mChildFragment[it.name] = FragmentHomeTab.newInstance(it)
+                }
+                mBinding.tabViewPage.apply {
+                    adapter = AdapterFragmentTab(mChildFragment, childFragmentManager, lifecycle = lifecycle)
+                }
+                TabLayoutMediator(mBinding.tabLayout, mBinding.tabViewPage, false, true) { tab, position ->
+                    tab.text = mChildFragment.keys.toList()[position]
 
-               }.attach()
-           }
+                }.attach()
+            }
+            hideLoading()
         }
-
+        initListener()
     }
-    private fun initListener(){
-        mBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+
+    private fun initListener() {
+        mBinding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 mBinding.tabViewPage.currentItem = tab.position
             }
@@ -90,7 +89,6 @@ class FragmentHome private constructor() : FragmentBusinessBase<FragmentHomeBind
         })
 
     }
-
 
 
     override fun onStart() {

@@ -36,5 +36,5 @@
     <color name="dialog_bg_press">#f0f0f0</color>
     <color name="dialog_cancel">#323233</color>
     <color name="dialog_confirm">#007ac9</color>
-
+    <color name="main_color">@color/white</color>
 </resources>

@@ -4,7 +4,7 @@ import com.ethan.common.bean.BeanBanner
 import com.ethan.common.bean.BeanCategoryResponse
 import com.ethan.common.bean.BeanLogin
 import com.ethan.common.bean.BeanProjectCategory
-import com.ethan.common.bean.BeanRecommendResponse
+import com.ethan.common.bean.BeanResponseArticle
 import com.ethan.common.bean.BeanSystem
 import com.ethan.network.response.ResponseBase
 import retrofit2.http.GET
@@ -26,7 +26,7 @@ interface ApiInterface {
      * Mine 我的推荐
      */
     @GET("/article/list/{page}/json")
-    suspend fun getHomeArticleList(@Path("page") page: Int, @Query("page_size") pageSize: Int): ResponseBase<BeanRecommendResponse>
+    suspend fun getHomeArticleList(@Path("page") page: Int, @Query("page_size") pageSize: Int): ResponseBase<BeanResponseArticle>
 
     /**
      * 登录接口
@@ -49,4 +49,8 @@ interface ApiInterface {
      */
     @GET("/tree/json")
     suspend fun requestSystemList(): ResponseBase<List<BeanSystem>>
+
+    @GET("/article/list/{page}/json")
+    suspend fun getArticleListByCid(@Path("page") page: Int, @Query("cid") cid: Int, @Query("page_size") pageSize: Int): ResponseBase<BeanResponseArticle>
+
 }

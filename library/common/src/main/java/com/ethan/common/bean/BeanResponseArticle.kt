@@ -2,7 +2,7 @@ package com.ethan.common.bean
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class BeanRecommendResponse(
+data class BeanResponseArticle(
     @SerializedName("curPage")
     var curPage: Int = 0,
     @SerializedName("datas")

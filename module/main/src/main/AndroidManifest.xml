@@ -15,5 +15,6 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.activity.ActivityArticleDetail" android:exported="false" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".ui.activity.ActivitySystemTab" android:exported="false" android:windowSoftInputMode="adjustPan"/>
     </application>
 </manifest>

@@ -10,11 +10,12 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 abstract class FragmentBusinessBase<DB : ViewDataBinding> : FragmentDataBindingBase<DB>(),KoinComponent {
-    private lateinit var mLoadingUtil: LoadingUtil
+    private  val mLoadingUtil: LoadingUtil by lazy { LoadingUtil(mContext) }
     protected val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
     protected val mGson: Gson by inject<Gson>()
+
     override fun initView(view: View, savedInstanceState: Bundle?) {
-        mLoadingUtil = LoadingUtil(mContext)
+
     }
 
     override fun showLoading(message: String) {

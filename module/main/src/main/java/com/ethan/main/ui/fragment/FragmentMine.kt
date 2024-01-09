@@ -7,7 +7,7 @@ import com.ethan.framework.base.FragmentBusinessBase
 import com.ethan.main.R
 import com.ethan.main.databinding.FragmentMineBinding
 import com.ethan.main.ui.adapter.AdapterMineHeader
-import com.ethan.main.ui.adapter.AdapterMineRecommend
+import com.ethan.main.ui.adapter.AdapterArticleList
 import com.ethan.main.ui.viewmodel.ViewModelMine
 import org.koin.core.component.inject
 
@@ -18,7 +18,7 @@ class FragmentMine : FragmentBusinessBase<FragmentMineBinding>() {
     private val mViewModel: ViewModelMine by inject<ViewModelMine>()
 
 
-    private val mAdapter: AdapterMineRecommend by lazy { AdapterMineRecommend() }
+    private val mAdapter: AdapterArticleList by lazy { AdapterArticleList() }
 
     private val mHelper: QuickAdapterHelper by lazy { QuickAdapterHelper.Builder(mAdapter).build() }
 

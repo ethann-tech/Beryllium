@@ -7,14 +7,14 @@ import com.chad.library.adapter.base.BaseDifferAdapter
 import com.chad.library.adapter.base.viewholder.DataBindingHolder
 import com.ethan.common.bean.BeanArticle
 import com.ethan.main.R
-import com.ethan.main.databinding.ItemMineRecommendBinding
+import com.ethan.main.databinding.ItemArticleListViewBinding
 import io.github.uhsk.kit.DATE_FORMAT_YEAR_MONTH_DAY_HOUR_MIN
 import io.github.uhsk.kit.format
 import io.github.uhsk.kit.toDate
 
-class AdapterMineRecommend : BaseDifferAdapter<BeanArticle, DataBindingHolder<ItemMineRecommendBinding>>(DiffCallBack()) {
+class AdapterArticleList : BaseDifferAdapter<BeanArticle, DataBindingHolder<ItemArticleListViewBinding>>(DiffCallBack()) {
 
-    override fun onBindViewHolder(holder: DataBindingHolder<ItemMineRecommendBinding>, position: Int, item: BeanArticle?) {
+    override fun onBindViewHolder(holder: DataBindingHolder<ItemArticleListViewBinding>, position: Int, item: BeanArticle?) {
         val mBinding = holder.binding
         item?.let {
             mBinding.tvTitle.text = it.title
@@ -24,8 +24,8 @@ class AdapterMineRecommend : BaseDifferAdapter<BeanArticle, DataBindingHolder<It
         }
     }
 
-    override fun onCreateViewHolder(context: Context, parent: ViewGroup, viewType: Int): DataBindingHolder<ItemMineRecommendBinding> {
-        return DataBindingHolder<ItemMineRecommendBinding>(R.layout.item_mine_recommend, parent)
+    override fun onCreateViewHolder(context: Context, parent: ViewGroup, viewType: Int): DataBindingHolder<ItemArticleListViewBinding> {
+        return DataBindingHolder<ItemArticleListViewBinding>(R.layout.item_article_list_view, parent)
     }
     class DiffCallBack : DiffUtil.ItemCallback<BeanArticle>() {
         override fun areItemsTheSame(oldItem: BeanArticle, newItem: BeanArticle): Boolean {

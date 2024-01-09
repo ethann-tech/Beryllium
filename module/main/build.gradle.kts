@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences.rxjava3)
     implementation(libs.google.hilt.android)
     implementation(libs.legacy.support.v4)
+    implementation(libs.room.ktx)
     kapt(libs.google.hilt.android.compiler)
     implementation(platform(libs.platform.androidx.compose.bom))
     testImplementation(libs.test.junit)

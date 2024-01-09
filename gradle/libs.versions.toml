@@ -24,6 +24,7 @@ koin_version = "3.5.0"
 live-event-bus-version="1.8.0"
 view-shape-version="1.7.6"
 tencent-tbsdk-version="44132"
+roomKtx = "2.6.1"
 [libraries]
 #
 # androidx & kotlin
@@ -194,6 +195,7 @@ zxing-core = { group = "com.google.zxing", name = "core", version.ref = "zxing_v
 
 
 view-shape= {group ="com.github.JavaNoober.BackgroundLibrary" ,name="libraryx",version.ref ="view-shape-version"}
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
 
 
 
