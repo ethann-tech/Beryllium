@@ -9,4 +9,12 @@
         <!--转一圈花费时长-->
         <attr name="hw_duration" format="integer"/>
     </declare-styleable>
+
+    <!-- 视频封面 -->
+    <declare-styleable name="VideoImageView">
+        <!-- 比例 -->
+        <attr name="ratio" format="float" />
+        <!-- 宽度偏差 -->
+        <attr name="offset" format="integer" />
+    </declare-styleable>
 </resources>

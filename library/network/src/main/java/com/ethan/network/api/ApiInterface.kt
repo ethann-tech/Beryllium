@@ -39,6 +39,8 @@ interface ApiInterface {
      */
     @GET("project/tree/json")
     suspend fun requestProjectCategory(): ResponseBase<List<BeanProjectCategory>>
+    @GET("project/tree/json")
+    suspend fun requestProjectTabs(): ResponseBase<List<BeanProjectCategory>>
 
 
     @GET("/navi/json")

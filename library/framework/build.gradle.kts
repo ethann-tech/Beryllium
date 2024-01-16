@@ -2,8 +2,6 @@ plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
-
 }
 
 android {
@@ -57,8 +55,6 @@ dependencies {
     implementation(libs.androidx.splashscreen)
     implementation(libs.gson)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.google.hilt.android)
-    kapt(libs.google.hilt.android.compiler)
     implementation(libs.slf4j.api)
     implementation(libs.logback.android)
     implementation(libs.ethan.zincum)

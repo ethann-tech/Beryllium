@@ -22,6 +22,7 @@ include(":app")
 include(":library:framework")
 include(":library:common")
 include(":library:network")
+include(":library:lib_glide")
 
 include(":module:main")
 include(":module:verify")

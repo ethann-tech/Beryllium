@@ -57,6 +57,9 @@ class FragmentSystemTab : FragmentBusinessBase<FragmentSystemTabBinding>() {
             mAdapterArticleList.addAll(it)
         }
 
+
+
+
     }
 
     private fun initListener() {

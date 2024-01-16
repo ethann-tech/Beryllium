@@ -1,6 +1,8 @@
 package com.ethan.framework
 
+import android.app.Activity
 import android.app.Application
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.Lifecycle
@@ -8,6 +10,7 @@ import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.lifecycleScope
+import com.ethan.framework.manager.ActivityManager
 import kotlinx.coroutines.runBlocking
 import kotlin.properties.Delegates
 

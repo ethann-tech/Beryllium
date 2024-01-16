@@ -1,11 +1,16 @@
 package com.ethan.beryllium
 
+import android.app.Activity
 import android.content.Context
+import android.os.Bundle
 import android.view.Gravity
 import androidx.multidex.MultiDex
 import com.ethan.beryllium.koin.allModule
 import com.ethan.framework.ApplicationLifecycle
 import com.ethan.framework.log.ImplLoggerManager
+import com.ethan.framework.manager.ActivityManager
+import com.ethan.framework.manager.AppFrontBackListener
+import com.ethan.framework.manager.AppFrontBackManager
 import com.hjq.toast.ToastStrategy
 import com.hjq.toast.Toaster
 import com.scwang.smart.refresh.footer.ClassicsFooter
@@ -34,6 +39,8 @@ class ApplicationBeryllium : ApplicationLifecycle() {
     override suspend fun onCreatedBySuspend() {
         super.onCreatedBySuspend()
         initLogger()
+        appFrontBackRegister()
+        registerActivityLifecycle()
         initToaster()
         initKoin()
         initSmartRefreshLayout()
@@ -71,5 +78,45 @@ class ApplicationBeryllium : ApplicationLifecycle() {
     private fun initSmartRefreshLayout() {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ -> ClassicsHeader(context) }
         SmartRefreshLayout.setDefaultRefreshFooterCreator { context, _ -> ClassicsFooter(context).setDrawableSize(20f) }
+    }
+
+
+    private fun appFrontBackRegister() {
+        AppFrontBackManager.register(this, object : AppFrontBackListener {
+            override fun onBackground(activity: Activity?) {
+                mLogger.info("LOG:ApplicationBeryllium:onBackground ={} running onBackground", activity?.javaClass?.simpleName)
+            }
+
+            override fun onFront(activity: Activity?) {
+                mLogger.info("LOG:ApplicationBeryllium:onFront ={} running onFront", activity?.javaClass?.simpleName)
+            }
+        })
+    }
+
+    private fun registerActivityLifecycle() {
+        registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
+            override fun onActivityPaused(activity: Activity) {
+            }
+
+            override fun onActivityStarted(activity: Activity) {
+            }
+
+            override fun onActivityDestroyed(activity: Activity) {
+                ActivityManager.pop(activity)
+            }
+
+            override fun onActivitySaveInstanceState(activity: Activity, p1: Bundle) {
+            }
+
+            override fun onActivityStopped(activity: Activity) {
+            }
+
+            override fun onActivityCreated(activity: Activity, p1: Bundle?) {
+                ActivityManager.push(activity)
+            }
+
+            override fun onActivityResumed(activity: Activity) {
+            }
+        })
     }
 }

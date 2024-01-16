@@ -47,6 +47,5 @@ class ViewModelSystem(app: Application) : BaseViewModel(app = app) {
                 _errorSystem.value = mResponse.message
             }
         }
-
     }
 }

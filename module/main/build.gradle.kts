@@ -101,4 +101,5 @@ dependencies {
     compileOnly(project(":library:framework"))
     compileOnly(project(":library:common"))
     compileOnly(project(":library:network"))
+    compileOnly(project(":library:lib_glide"))
 }

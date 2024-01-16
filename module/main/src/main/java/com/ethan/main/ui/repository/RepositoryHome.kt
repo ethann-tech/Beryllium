@@ -7,7 +7,7 @@ import com.ethan.network.manager.NetWorkManager
 import com.ethan.network.repository.RepositoryBase
 import com.ethan.network.response.ResponseBase
 
-open class RepositoryHome : RepositoryBase() {
+open class RepositoryHome : RepositoryCommon() {
 
     suspend fun requestHomeBanner(): MutableList<BeanBanner>? {
         return requestResponse { api.getHomeBanner() }

@@ -156,7 +156,7 @@ qmuiteam-arch = 'com.qmuiteam:arch:2.0.1'
 qmuiteam-arch-compiler = 'com.qmuiteam:arch-compiler:2.0.1' # kapt
 tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
 wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
-ethan-zincum = 'com.github.ethann-tech:Zincum:0.1.0'
+ethan-zincum = 'com.github.ethann-tech:Zincum:0.1.2'
 # 消息总线 https://github.com/JeremyLiao/LiveEventBus
 live-event-bus ={group="io.github.jeremyliao",name="live-event-bus",version.ref="live-event-bus-version"}
 
