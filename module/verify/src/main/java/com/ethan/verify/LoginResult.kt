@@ -1,9 +1,9 @@
 package com.ethan.verify
 
-import com.ethan.common.bean.BeanLogin
+import com.ethan.common.bean.BeanUserInfo
 
 class LoginResult {
-    val success:BeanLogin? =null
+    val success:BeanUserInfo? =null
     val error:String?=null
 
 }

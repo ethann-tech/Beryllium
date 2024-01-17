@@ -2,7 +2,7 @@ package com.ethan.network.api
 
 import com.ethan.common.bean.BeanBanner
 import com.ethan.common.bean.BeanCategoryResponse
-import com.ethan.common.bean.BeanLogin
+import com.ethan.common.bean.BeanUserInfo
 import com.ethan.common.bean.BeanProjectCategory
 import com.ethan.common.bean.BeanResponseArticle
 import com.ethan.common.bean.BeanSystem
@@ -32,7 +32,7 @@ interface ApiInterface {
      * 登录接口
      */
     @POST("/user/login")
-    suspend fun requestLogin(@Query("username") username: String, @Query("password") password: String): ResponseBase<BeanLogin>?
+    suspend fun requestLogin(@Query("username") username: String, @Query("password") password: String): ResponseBase<BeanUserInfo>?
 
     /**
      * 项目分类

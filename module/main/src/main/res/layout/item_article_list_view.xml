@@ -7,9 +7,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/dp_64"
-        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_8"
-        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_12"
         android:background="@drawable/bg_mine_recommend_item"
         android:paddingTop="@dimen/dp_6"
         android:paddingStart="@dimen/dp_4"
@@ -51,8 +51,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_collect"
-            android:layout_width="@dimen/dp_22"
-            android:layout_height="@dimen/dp_22"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:layout_marginEnd="@dimen/dp_16"
             android:src="@drawable/selector_mine_collect"
             app:layout_constraintEnd_toStartOf="@id/img_concern"
@@ -60,8 +60,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_concern"
-            android:layout_width="@dimen/dp_22"
-            android:layout_height="@dimen/dp_22"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:padding="@dimen/dp_2"
             android:src="@drawable/selector_mine_collect_1"
             app:layout_constraintEnd_toEndOf="parent"

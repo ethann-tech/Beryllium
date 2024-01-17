@@ -26,7 +26,7 @@ class FragmentMine : FragmentBusinessBase<FragmentMineBinding>() {
 
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
-        super.initView(view, savedInstanceState) //        mViewModel.requestRecommendList(page = mViewModel.page)
+        super.initView(view, savedInstanceState)
         mBinding.recycler.adapter = mHelper.adapter
         mHelper.addBeforeAdapter(0, AdapterMineHeader())
         mBinding.layoutSmartRefresh.autoRefresh()
@@ -55,5 +55,6 @@ class FragmentMine : FragmentBusinessBase<FragmentMineBinding>() {
             mViewModel.requestRecommendList(mViewModel.page)
             mBinding.layoutSmartRefresh.finishLoadMore(1000)
         }
+
     }
 }

@@ -1,11 +1,10 @@
 package com.ethan.common.bean
 import android.text.TextUtils
-import androidx.compose.ui.unit.TextUnit
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 
-data class BeanLogin(
+data class BeanUserInfo(
     @SerializedName("admin")
     var admin: Boolean = false,
     @SerializedName("chapterTops")

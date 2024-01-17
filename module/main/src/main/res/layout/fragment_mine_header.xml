@@ -31,10 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="@dimen/dp_120"
-                android:paddingStart="@dimen/dp_16"
-                android:paddingTop="@dimen/dp_16"
-                android:paddingEnd="@dimen/dp_16"
-                android:paddingBottom="@dimen/dp_16"
+                android:padding="@dimen/dp_12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -44,17 +41,9 @@
                     android:id="@+id/img_settings"
                     android:layout_width="@dimen/dp_22"
                     android:layout_height="@dimen/dp_22"
-                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_12"
                     android:src="@mipmap/mine_setting_ico"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/image_user_icon"
-                    android:layout_width="@dimen/dp_65"
-                    android:layout_height="@dimen/dp_65"
-                    android:src="@mipmap/default_head"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -63,17 +52,17 @@
                     android:layout_marginStart="@dimen/dp_16"
                     android:text="@string/not_login"
                     app:layout_constraintBottom_toTopOf="@id/tv_desc"
-                    app:layout_constraintStart_toEndOf="@id/image_user_icon"
-                    app:layout_constraintTop_toTopOf="@id/image_user_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_settings"
                     tools:text="@string/not_login" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_desc"
                     style="@style/TextViewSecondStyle"
                     android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
                     android:text="@string/home_mine_login_desc"
-                    app:layout_constraintBottom_toBottomOf="@id/image_user_icon"
-                    app:layout_constraintStart_toEndOf="@id/image_user_icon"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_username"
                     tools:text="@string/home_mine_login_desc" />
 
@@ -83,8 +72,8 @@
                 android:id="@+id/layout_mine_works"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_44"
-                android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
                 android:background="@drawable/bg_mine_short_video"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"

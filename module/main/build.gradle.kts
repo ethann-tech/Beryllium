@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.datastore.preferences.core)
     implementation(libs.androidx.datastore.preferences.rxjava3)
+
     implementation(libs.google.hilt.android)
     implementation(libs.legacy.support.v4)
     implementation(libs.room.ktx)

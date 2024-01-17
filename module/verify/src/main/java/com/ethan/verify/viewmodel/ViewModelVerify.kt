@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.ethan.common.bean.BeanLogin
+import com.ethan.common.bean.BeanUserInfo
 import com.ethan.network.response.ResponseBase
 import com.ethan.network.viewmodel.BaseViewModel
 import com.ethan.verify.LoginState
@@ -13,14 +13,14 @@ import kotlinx.coroutines.launch
 
 class ViewModelVerify(application: Application, val repositoryVerify: RepositoryVerify) : BaseViewModel(app = application) {
 
-    private val _loginResultLiveData = MutableLiveData<BeanLogin?>()
-    val mLoginResultLiveData: LiveData<BeanLogin?> = _loginResultLiveData
+    private val _loginResultLiveData = MutableLiveData<BeanUserInfo?>()
+    val mLoginResultLiveData: LiveData<BeanUserInfo?> = _loginResultLiveData
 
     private val _loginStateLiveData = MutableLiveData<LoginState>()
     val loginStateLiveData: LiveData<LoginState> = _loginStateLiveData
 
-    private val _loginFailedData = MutableLiveData<ResponseBase<BeanLogin>>()
-    val mLoginFailedData: LiveData<ResponseBase<BeanLogin>> = _loginFailedData
+    private val _loginFailedData = MutableLiveData<ResponseBase<BeanUserInfo>>()
+    val mLoginFailedData: LiveData<ResponseBase<BeanUserInfo>> = _loginFailedData
 
 
     fun requestLogin(username: String, password: String) {
